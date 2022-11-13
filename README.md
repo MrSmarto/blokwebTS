@@ -36,14 +36,14 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  https://www.ns.nl/
+  https://discord.com/ 
 
   #### Screenshot(s) van de eerste pagina (small screen): 
-  hier de naam van de pagina  
+  Naam pagina: Discord homepagina 
   <img src="readme-images/discordhome.png" width="375px" alt="homepagina van discord.com">
 
   #### Screenshot(s) van de tweede pagina (small screen):
-  hier de naam van de pagina  
+  Naam pagina: Discord server pagina
   <img src="readme-images/discordservers.png" width="375px" alt="pagina waarop de communinities gevonden kunnen worden door een zoekbalk.">
  
 </details>
