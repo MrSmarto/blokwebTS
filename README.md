@@ -40,11 +40,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   hier de naam van de pagina  
-  <img src="readme-images/discordhome" width="375px" alt="homepagina van discord.com">
+  <img src="readme-images/discordhome.png" width="375px" alt="homepagina van discord.com">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   hier de naam van de pagina  
-  <img src="readme-images/discordservers" width="375px" alt="pagina waarop de communinities gevonden kunnen worden door een zoekbalk.">
+  <img src="readme-images/discordservers.png" width="375px" alt="pagina waarop de communinities gevonden kunnen worden door een zoekbalk.">
  
 </details>
 
