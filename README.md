@@ -64,11 +64,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   
   <strong>Oplossingen</strong>
   <li>
-    <ul>Duidelijk focus state</ul>
-    <ul>veel wit ruimte</ul>
-    <ul>duidelijk zien waar je cursor zich bevindt</ul>
-    <ul>Weinig afleiding content</ul>
-    <ul>Duidelijke headers</ul>
+    <ul>Instellingen personaliseren</ul>
+    <ul>Oefenen</ul>
+    <ul>Stem veranderen</ul>
+    <ul>Snelheid van de stemveranderen</ul>
+    <ul>Sneltoetsen gebruiken zoals TAB d.m.v de DOM van de site gebruiken om te navigeren.</ul>
   </li>
 
 
@@ -93,11 +93,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   <strong>Oplossingen</strong>
     <li>
-      <ul>Duidelijk focus state</ul>
-      <ul>veel wit ruimte</ul>
-      <ul>duidelijk zien waar je cursor zich bevindt</ul>
-      <ul>Weinig afleiding content</ul>
-      <ul>Duidelijke headers</ul>
+      <ul>Arm ondersteuning</ul>
+      <ul>Groot toetsenbord</ul>
+      <ul>Een speciale muis om dingen te selecteren of te scrollen</ul>
   </li>
 
 
@@ -107,11 +105,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   <strong>Oplossingen</strong>
   <li>
-    <ul>Duidelijk focus state</ul>
-    <ul>veel wit ruimte</ul>
-    <ul>duidelijk zien waar je cursor zich bevindt</ul>
-    <ul>Weinig afleiding content</ul>
-    <ul>Duidelijke headers</ul>
+    <ul>Braille typen</ul>
+    <ul>Screenreader gebruiken</ul>
+    <ul>Sneltoetsen gebruiken zoals TAB</ul>
+    <ul>Contrast of de helderheid veranderen</ul>
   </li>
 
 </details>
