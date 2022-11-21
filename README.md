@@ -60,7 +60,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Screenreader
   Hier ging ik de interface van fallguys testen d.m.v een voiceover. Dit was erg frustrerend omdat het best lastig te begrijpen is. De website heeft niet de beste focus state. Daarnaast is de site opgebouwd uit DIVS waardoor de voiceover niet de juiste elementen kan lezen.
-    <img src="readme-images/Voiceover" width="375px" alt="pagina waarop je fall guy merchendise kan kopen.">
+    <img src="readme-images/Voiceover.jpg" width="375px" alt="pagina waarop je fall guy merchendise kan kopen.">
   
   <strong>Oplossingen</strong>
   <li>
@@ -74,7 +74,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Muis en Toetsenbord 
   Hier ging ik testen of ik de interface, muis en het toetsenbord kon gebruiken terwijl ik werd afgeleid door een balon omhoog te houden. Om mezelf te kunnen verplaatsen in een doelgroep die snel wordt afgeleid. Het was erg moeilijk om te kunnen focussen. (met indien nodig afbeeldingen)
-  <img src="readme-images/concentratie" width="375px" alt="pagina waarop je fall guy merchendise kan kopen.">
+  <img src="readme-images/concentratie.jpg" width="375px" alt="pagina waarop je fall guy merchendise kan kopen.">
   
   <strong>Oplossingen</strong>
   <li>
@@ -88,8 +88,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Motoriek (shocks, elastiekjes)
   Hier ging ik d.m.v elastiekjes om mijn vingers wikkelen de website doorbrowsen. Daarnaast heb ik ook een schokmaschine op mijn arm geplaatst, zodat ik kan ervaren hoe mensen met spasme met het browsen omgaan. Om mezelf te verdiepen in mensen met een slectere moteriek.
-    <img src="readme-images/Elastiek" width="375px" alt="pagina waarop je fall guy merchendise kan kopen.">
-   <img src="readme-images/schokken-spasme" width="375px" alt="pagina waarop je fall guy merchendise kan kopen.">
+    <img src="readme-images/Elastiek.jpg" width="375px" alt="pagina waarop je fall guy merchendise kan kopen.">
+   <img src="readme-images/schokken-spasme.jpg" width="375px" alt="pagina waarop je fall guy merchendise kan kopen.">
 
   <strong>Oplossingen</strong>
     <li>
@@ -103,7 +103,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Visueel (brillen, contrast, kleurenblind, dark/light). 
   Hier ging ik de toegankelijkheid testen voor visueel beperkte mensen d.m.v een bril op te doen die het lastig maakt om goed te kunnen zien.
-    <img src="readme-images/vlekken" width="375px" alt="pagina waarop je fall guy merchendise kan kopen.">
+    <img src="readme-images/vlekken.jpg" width="375px" alt="pagina waarop je fall guy merchendise kan kopen.">
 
   <strong>Oplossingen</strong>
   <li>
@@ -310,4 +310,4 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   2. bron 2
   3. ...
 
-</details> 
+</details>
