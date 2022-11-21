@@ -22,7 +22,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Rood (kies uit zwart, rood óf blauw)
 
   #### Je focus:
-  Surface plane (kies uit responsive óf surface plane)
+  Helemaal responsive (kies uit responsive óf surface plane)
  
 </details>
 
@@ -36,15 +36,15 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  https://discord.com/ 
+  https://fallguys.store/en/
 
   #### Screenshot(s) van de eerste pagina (small screen): 
-  Naam pagina: Discord homepagina 
-  <img src="readme-images/discordhome.png" width="375px" alt="homepagina van discord.com">
+  Naam pagina: Homepagina
+  <img src="readme-images/fallguys2.jpg" width="375px" alt="homepagina van discord.com">
 
   #### Screenshot(s) van de tweede pagina (small screen):
-  Naam pagina: Discord server pagina
-  <img src="readme-images/discordservers.png" width="375px" alt="pagina waarop de communinities gevonden kunnen worden door een zoekbalk.">
+  Naam pagina: Shoppagina
+  <img src="readme-images/fallguys2.jpg" width="375px" alt="pagina waarop de communinities gevonden kunnen worden door een zoekbalk.">
  
 </details>
 
