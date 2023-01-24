@@ -1,0 +1,678 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+	box-sizing:border-box;  
+  }
+  
+  button:not(disabled) {
+	cursor:pointer;
+  }
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+/* https://dlo.mijnhva.nl/d2l/le/content/437099/Home */
+:root {
+	--zwartmain:rgb(0, 0, 0);	
+	--witmain:#fff;
+	--menuopenkleur:rgb(49, 48, 54);
+	--calltoactionCYAN: rgb(96, 233, 255);
+	--calltoactionPINK: #fd44e8;
+
+	/* gradient */
+	/* Bron: https://www.joshwcomeau.com/gradient-generator/ */
+	--sectionslides: linear-gradient(
+		0deg,
+		hsl(224deg 100% 38%) 0%,
+		hsl(226deg 79% 47%) 8%,
+		hsl(225deg 82% 54%) 16%,
+		hsl(224deg 100% 61%) 24%,
+		hsl(209deg 100% 50%) 31%,
+		hsl(204deg 100% 50%) 39%,
+		hsl(204deg 89% 59%) 47%,
+		hsl(198deg 94% 54%) 55%,
+		hsl(193deg 100% 49%) 64%,
+		hsl(190deg 99% 49%) 73%,
+		hsl(189deg 100% 49%) 81%,
+		hsl(187deg 96% 51%) 91%,
+		hsl(186deg 95% 55%) 100%
+	  );
+
+	/* fonts */
+	--websitefont: 'Kanit', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+  /* winkel */
+  --item-color: var(--zwartmain);
+  --item-border-color: var(--zwartmain);
+  --item-text-shadow:
+      0 0 .125em var(--calltoactionCYAN),
+      0 0 .25em var(--calltoactionCYAN),
+      0 0 .5em var(--calltoactionCYAN);
+  }
+
+/* Bronnen */
+/* https://techstacker.com/how-to-make-elements-zoom-on-hover-with-css/ */
+/* https://css-tricks.com/almanac/properties/c/clip-path/ */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit?retiredLocale=nl */
+/* www.canva.nl illustraties */
+
+/* Speciale states */
+img:focus-visible {
+	border: solid 1px var(--calltoactionPINK);
+	box-shadow: 0px 0px 10px 10px var(--calltoactionCYAN);
+	transform: scale(1.01);
+}
+
+button:focus-visible {
+	border: solid 1px var(--calltoactionPINK);
+	box-shadow: 0px 0px 10px 10px var(--calltoactionCYAN);
+	transform: scale(1.01);
+}
+
+a:focus-visible {
+	border: solid 1px var(--calltoactionPINK);
+	box-shadow: 0px 0px 10px 10px var(--calltoactionCYAN);
+	transform: scale(1.01);
+}
+
+button:active {
+	transform: scale(1.2);
+}
+
+a:active {
+	transform: scale(1.2);
+}
+
+/* STYLING VOOR DE BODY */
+body {
+	margin:0;
+  }
+
+/* STYLING VOOR DE HEADER */
+header {
+	min-height:4em;
+	padding:0 1em;
+	background-color:black;
+	line-height:1;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	position:sticky;
+	top:0;
+	z-index: 99999;
+  }
+
+  /* DE WINKEL ITEMS STYLING */
+  header div a:nth-of-type(1) {
+	background-color: var(--calltoactionCYAN);
+	padding: 10px;
+	border-radius: 0.5em;
+	margin-right: 0.5em;
+  }
+
+  header div a:nth-of-type(2) {
+	background-color: var(--calltoactionPINK);
+	padding: 10px;
+	border-radius: 0.5em;
+  }
+
+  header a span:nth-of-type(1) {
+	background-color: var(--witmain);
+	color: var(--zwartmain);
+	padding: 5px 10px 5px 10px;
+	border-radius: 0.5em;
+	margin-left: 0.5em;
+  }
+  
+  header a span:nth-of-type(2) {
+	background-color: var(--witmain);
+	color: var(--zwartmain);
+	padding: 5px;
+	border-radius: 1em;
+	margin-left: 0.5em;
+  }
+
+  /* alle links in de header */
+  header a {
+	padding:.5em 0;
+	color: white;
+	text-decoration:none;
+  }
+
+
+/* HET LOGO */
+header a.logo2{
+	/* om het boek en de titel te positioneren */
+	width: 35%;
+  }
+  
+  /* link icon */
+  header > a:last-of-type img {
+	width:auto;
+	height:2em;
+  }
+  
+/* HAMBURGER BUTTON STYLING */
+header button {
+	padding:.5em;
+	
+	/* icon en tekst met gap-je naast elkaar */
+
+	align-items:center;
+	gap:.25em;
+	
+	/* standaard styling aanpassen */
+	appearance:none;
+	background-color:var(--calltoactionCYAN);
+	border:none;
+	border-radius:.25em; 
+	font:inherit;
+	text-align:center;
+	color:var(--button-color);
+	transition: transform 2s;
+  }
+
+  header button:hover {
+	transform: scale(1.3);
+
+  }
+  
+  header button img {
+	width:1em;
+  }
+
+/* SLUIT BUTTON STYLING */
+header nav button {
+	padding:.5em;
+	
+	/* icon en tekst met gap-je naast elkaar */
+	position: relative;
+	align-items:flex-end;
+	
+	/* standaard styling aanpassen */
+	appearance:none;
+	background-color: black;
+	border:none;
+	border-radius:.25em; 
+	font:inherit;
+	text-align:center;
+	color:var(--button-color);
+	transition: transform 2s;
+  }
+
+  header nav button:hover {
+	transform: scale(0.1);
+  }
+  
+  header button img {
+	height:1em;
+  }
+
+
+/* SLUIT BUTTON POSITIONERING */
+header nav > button {
+	justify-self:end;
+   }
+   
+/* HET MENU */
+nav {
+	padding:1em;
+	display:grid;
+	align-content:start;
+	gap:1em;
+	background-color:var(--menuopenkleur);
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	transform:translatex(100%);
+	transition:transform 1s;
+	width: 100%;
+  }
+  
+  /* als menu open is */
+  nav.toonMenu {
+	transform:translatex(0);
+  }
+  
+/* LIJST MET LINKS */
+
+nav ul { 
+	margin:0; 
+	padding:0em;
+	list-style:none;
+	z-index: 100;
+  }
+
+nav ul li {
+    font-size: 14px;
+    font-family: var (var(--websitefont));
+	letter-spacing: 1.05px;
+	align-items: center;
+	z-index: 100;
+}
+  
+/* EEN LINK IN DE LIJST */
+
+nav a {
+	/* icon en tekst met gap-je naast elkaar */
+	display:flex;
+	align-items:center;
+	column-gap:.25em;
+	border-bottom:solid 0.5px white;
+  	padding: 15px;
+ 	margin: 1em 0 0 0;
+	z-index: 100;
+	transition: transform .2s; 
+  }
+
+  nav a:hover {
+	transform: scale(1.1);
+	background-color: var(--witmain);
+	border-top: var(--calltoactionCYAN);
+	border-left: var(--calltoactionCYAN);
+	border-bottom: var(--calltoactionPINK);
+	border-right: var(--calltoactionPINK);
+	border-style: solid;
+	border-width: 0.5em;
+	color: var(--zwartmain);
+  }
+  
+  nav a img {
+	width:auto;
+	height:3em;
+  }
+  
+  nav a.active {
+	font-weight:bold;
+	font-size: 110%;
+  }
+
+  nav ul li:hover {
+  	box-shadow: inset 46em 0 0 0 var(--calltoactioncolor);
+	transition: 1s ease-in-out;
+	color: black;
+  }
+
+/* DE MAIN PER SECTION */
+
+main  {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+/* gemakkelijk de font per element kunnen aanpassen */
+  p {
+	font-family: var(--websitefont);
+}
+
+  h1 {
+	font-family: var(--websitefont);
+  }
+
+  h2 {
+	font-family: var(--websitefont);
+  }
+
+  h3 {
+	font-family: var(--websitefont);
+  }
+
+  button {
+	font-family: var(--websitefont);
+  }
+
+  ul {
+	padding-left: none;
+	list-style: none;
+  }
+
+  img {
+	width: 100%;
+  }
+
+/* SECTION 1 */
+
+main.shop section:nth-of-type(1) span:nth-of-type(1) {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: -1;
+    clip-path: polygon(0.00% 0.00%,100% 0%,100% 100%,0% 94%);
+}
+
+main.shop section:nth-of-type(1) section {
+    position: relative;
+    width: 50%;
+    display: grid;
+    place-items: center;
+}
+
+/* SECTION 2 */
+
+/* Als een ITEM als FAVORIET is dan krijgt hij deze styling.*/
+li.liked button.like {  
+    background-color: var(--zwartmain);
+    color:red;
+    font-size:1.5em;
+  }
+  
+  /* Achtergrond schaduw zolang het ITEM ALS FAVORIET IS GESELECTEERD*/
+  li.liked img {  
+    filter:drop-shadow(0 0 1em rgb(0, 0, 0));
+  }
+  
+  
+/* HEADER */
+
+  main section:nth-of-type(2) {
+    display:grid;
+    gap:1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-color: var(--calltoactionCYAN);
+  }
+  
+/* NAV */
+  main div[aria-label="winkelitems"] {
+    display:flex;
+    gap:1em;
+  }
+  
+  
+/* VOLLEDIGE STYLING VOOR de gehele winkel */
+ section:nth-of-type(2) ul[aria-label="items"] {
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(min(12em, 100%), 1fr));
+    gap:1em;
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+  
+  
+  
+/* INDIVIDUELE STYLING voor de losse items */
+  section:nth-of-type(2) ul[aria-label="items"] li {
+    aspect-ratio:3/2;
+    padding:.8em;
+    display:grid;
+    grid-template-columns:auto max-content;
+    grid-template-rows:min-content 1fr min-content;
+    row-gap:.2em;
+    
+    /* kleuren en randje */
+    border:solid .2em var(--item-border-color);
+    border-radius:1em;
+    box-shadow:var(--item-box-shadow);
+    color:var(--witmain);  
+    background-color: var(--witmain);
+  }
+  
+  
+  
+/* TITEL met glans */
+  section:nth-of-type(2) ul[aria-label="items"] li h3 {
+    grid-column:1/-1;
+    grid-row-start:2; 
+    z-index:100;
+    margin:0;
+    display:grid;
+    grid-template-columns:min-content;
+    line-height:1em;
+    color: var(--zwartmain);
+    text-shadow:var(--item-text-shadow); 
+  }
+  
+/* De paragrafen in een item */
+  
+  /* styling voor beide */
+  section:nth-of-type(2) ul[aria-label="items"] li p {
+    margin:0;
+    line-height:1em;
+    font-family: var(--websitefont);
+  }
+  
+  /* Season paragraaf */
+  section:nth-of-type(2) ul[aria-label="items"] li p:nth-of-type(1) {
+    grid-column-start:1;
+    grid-row-start:1;
+    justify-self:start;
+    padding:.0625em .25em;
+    color: var(--zwartmain);
+    border-radius:.25em;
+    text-transform:capitalize;
+    font-family: var(--websitefont);
+  }
+  
+  
+  /* de prijs paragraaf */
+  section:nth-of-type(2) ul[aria-label="items"] li p:nth-of-type(2) {
+    grid-column-start:1;
+    grid-row-start:3;
+    justify-self:start;
+    align-self:center;
+    color: var(--zwartmain);
+    font-family: var(--websitefont);
+  }
+
+  
+  section:nth-of-type(2) ul[aria-label="items"] li p:nth-of-type(2)::first-letter {
+    float:left;
+    padding-right:.05em;
+    font-size:3em;
+    font-weight:bold;
+    color:var(--calltoactionPINK);
+  }
+  
+
+/* De afbeelding */
+  section:nth-of-type(2) ul[aria-label="items"] li img {
+    grid-area:1 / 1 / -1 / -1;
+    justify-self:center;
+    align-self:center;
+    height:50%;
+    width: 50%;
+  }
+
+  section:nth-of-type(2) ul[aria-label="items"] li img:hover {
+    grid-area:1 / 1 / -1 / -1;
+    justify-self:center;
+    align-self:center;
+    height:50%;
+    width: 50%;
+    margin-top: 1em;
+  }
+
+/* DE BUTTONS */
+  
+  /* Styling voor beide buttons */
+  section:nth-of-type(2) ul[aria-label="items"] li button {
+    min-height:2.5rem;
+    z-index:200;
+    appearance:none;
+    border:none;
+    border-radius:.5rem;
+    font:inherit;
+    cursor:pointer;
+    transition:transform .3s;
+    font-family: var(--websitefont);
+  }
+  
+  section:nth-of-type(2) ul[aria-label="items"] li button:active {
+    transition:transform 0s;
+    transform:translatey(5px);
+    font-family: var(--websitefont);
+  }
+
+  
+  /* favoriet button */
+  section:nth-of-type(2) ul[aria-label="items"] li button:nth-of-type(1) {
+    grid-column-start:2;
+    grid-row:1/3;
+    justify-self:end;
+    align-self:start;
+    aspect-ratio:1/1; 
+  }
+  
+  
+  /* Koop button */
+  section:nth-of-type(2) ul[aria-label="items"] li button:nth-of-type(2) {
+    grid-column-start:2;
+    grid-row-start:3;
+    padding:0 1rem;
+    color: var(--calltoactionPINK);
+    background-color:rgb(225, 225, 225);
+    font-weight: bolder;
+    font-family: var(--websitefont);
+  }
+
+    /* Koop button hover */
+    section:nth-of-type(2) ul[aria-label="items"] li button:nth-of-type(2):hover {
+        grid-column-start:2;
+        grid-row-start:3;
+        padding:0 1rem;
+        color: var(--calltoactionPINK);
+        background-color:var(--zwartmain);
+        font-weight: bolder;
+        font-family: var(--websitefont);
+      }
+  
+      /* het + in de koop button */
+  section:nth-of-type(2) ul[aria-label="items"] li button:nth-of-type(2)::before {
+    content:"+";
+    padding-right:.25rem;
+    font-weight:bold;
+    font-family: var(--websitefont);
+  }
+
+  /* Footer */
+
+ footer[aria-label="footer1"] {
+	height: 670px;
+	background-color: var(--zwartmain);
+ }
+
+ footer[aria-label="footer1"] h2 {
+	padding-top: 3em;
+	color: white;
+	display: flex;
+	justify-content: center;
+ }
+
+ footer ul[aria-label="socials"] {
+	display: flex;
+	margin-right: 40px;
+	justify-content: center;
+	gap: 10px;
+	transition: transform 5s;
+ }
+
+ footer ul[aria-label="socials"] img:hover {
+	transform: scale(1.2);
+ }
+
+ footer section ul {
+	color: var(--witmain);
+	text-align: center;
+	margin-top: 3em;
+	line-height: 2em;
+	margin-right: 2em;
+    flex-direction: column;
+    justify-items: center;
+	font-family: var(--websitefont);
+ }
+
+ footer section a {
+	text-decoration: none;
+	color: var(--witmain);
+ }
+
+ footer section li {
+	transition: 1s;
+ }
+
+ footer section li:hover {
+	color: var(--calltoactionPINK);
+	background-color: var(--witmain);
+	padding: 6px;
+	border-top: yellow;
+	border-left: orange;
+	border-right: red;
+	border-bottom: var(--calltoactionCYAN);
+	border-width: .5em;
+	border-style: solid;
+ }
+
+
+  /****************************************************************/
+/* styling voor de header als de browser minimaal 38em breed is */
+/****************************************************************/
+@media (min-width:38em) {
+	header > button {
+	  /* JOUW CODE HIER - stap 6 */
+	  display:none;
+	}
+	
+	nav {
+	  /* JOUW CODE HIER - stap 7 */
+	  position:static;
+	  transform:none;
+	  padding:0;
+	  background:none;
+	}
+	
+	nav button {
+	  /* JOUW CODE HIER - stap 6 */
+	  display:none;
+	}
+	
+	nav ul {
+	  /* JOUW CODE HIER - stap 8 */
+	  display:flex;
+	  gap:1em;
+	  margin: 50px;
+	}
+	
+	nav a {
+	  /* JOUW CODE HIER - stap 9 */
+	  flex-direction:column;
+	  
+	  border:none;
+	}
+
+	nav ul li:hover {
+		color: #012;
+		box-shadow: inset 46em 0 0 0 var(--calltoactioncolor);
+		transition: 1s ease-in-out;
+		border-radius: 2em;
+	  }
+
+	  nav ul li {
+		text-align: center;
+
+	  }
+	
+	header > a:last-of-type {
+	  /* JOUW CODE HIER - stap 9 */
+	  flex-direction:column;
+	}
+  }
+
+  /****************************************************************/
+  /* styling voor de header als de browser minimaal 57em breed is */
+  /****************************************************************/
+  @media (min-width:58em) {
+	header > a:last-of-type,
+	nav a {
+	  flex-direction:row;
+	  height: auto;
+	  width: auto;
+	}
+  }

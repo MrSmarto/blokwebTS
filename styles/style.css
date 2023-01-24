@@ -2,33 +2,881 @@
 /* CSS REMEDY */
 /**************/
 *, *::after, *::before {
-  box-sizing:border-box;  
-}
-
-button, summary {
-	cursor: pointer;
-}
-
-
-
-
+	box-sizing:border-box;  
+  }
+  
+  button:not(disabled) {
+	cursor:pointer;
+  }
 
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
+
+/* https://dlo.mijnhva.nl/d2l/le/content/437099/Home */
 :root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+	--zwartmain:rgb(0, 0, 0);	
+	--witmain:#fff;
+	--menuopenkleur:rgb(49, 48, 54);
+	--calltoactionCYAN: rgb(96, 233, 255);
+	--calltoactionPINK: #fd44e8;
+
+	/* gradient */
+	/* Bron: https://www.joshwcomeau.com/gradient-generator/ */
+	--sectionslides: linear-gradient(
+		0deg,
+		hsl(224deg 100% 38%) 0%,
+		hsl(226deg 79% 47%) 8%,
+		hsl(225deg 82% 54%) 16%,
+		hsl(224deg 100% 61%) 24%,
+		hsl(209deg 100% 50%) 31%,
+		hsl(204deg 100% 50%) 39%,
+		hsl(204deg 89% 59%) 47%,
+		hsl(198deg 94% 54%) 55%,
+		hsl(193deg 100% 49%) 64%,
+		hsl(190deg 99% 49%) 73%,
+		hsl(189deg 100% 49%) 81%,
+		hsl(187deg 96% 51%) 91%,
+		hsl(186deg 95% 55%) 100%
+	  );
+
+	/* fonts */
+	--websitefont: 'Kanit', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+	/* winkel */
+	--item-color: var(--zwartmain);
+	--item-border-color: var(--zwartmain);
+	--item-text-shadow:
+		0 0 .125em var(--calltoactionCYAN),
+		0 0 .25em var(--calltoactionCYAN),
+		0 0 .5em var(--calltoactionCYAN);
+  }
+
+/* Bronnen */
+/* https://techstacker.com/how-to-make-elements-zoom-on-hover-with-css/ */
+/* https://css-tricks.com/almanac/properties/c/clip-path/ */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit?retiredLocale=nl */
+
+/* Speciale states */
+img:focus-visible {
+	border: solid 1px var(--calltoactionPINK);
+	box-shadow: 0px 0px 10px 10px var(--calltoactionCYAN);
+	transform: scale(1.01);
+}
+
+button:focus-visible {
+	border: solid 1px var(--calltoactionPINK);
+	box-shadow: 0px 0px 10px 10px var(--calltoactionCYAN);
+	transform: scale(1.01);
+}
+
+a:focus-visible {
+	border: solid 1px var(--calltoactionPINK);
+	box-shadow: 0px 0px 10px 10px var(--calltoactionCYAN);
+	transform: scale(1.01);
+}
+
+button:active {
+	transform: scale(1.2);
+}
+
+a:active {
+	transform: scale(1.2);
+}
+
+/* STYLING VOOR DE BODY */
+body {
+	margin:0;
+  }
+
+/* STYLING VOOR DE HEADER */
+header {
+	min-height:4em;
+	padding:0 1em;
+	background-color:black;
+	line-height:1;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	position:sticky;
+	top:0;
+	z-index: 1;
+  }
+
+  /* DE WINKEL ITEMS STYLING */
+  header div a:nth-of-type(1) {
+	background-color: var(--calltoactionCYAN);
+	padding: 10px;
+	border-radius: 0.5em;
+	margin-right: 0.5em;
+  }
+
+  header div a:nth-of-type(2) {
+	background-color: var(--calltoactionPINK);
+	padding: 10px;
+	border-radius: 0.5em;
+  }
+
+  header a span:nth-of-type(1) {
+	background-color: var(--witmain);
+	color: var(--zwartmain);
+	padding: 5px 10px 5px 10px;
+	border-radius: 0.5em;
+	margin-left: 0.5em;
+  }
+  
+  header a span:nth-of-type(2) {
+	background-color: var(--witmain);
+	color: var(--zwartmain);
+	padding: 5px;
+	border-radius: 1em;
+	margin-left: 0.5em;
+  }
+
+  /* alle links in de header */
+  header a {
+	padding:.5em 0;
+	color: white;
+	text-decoration:none;
+  }
+
+
+/* HET LOGO */
+header a.logo2{
+	/* om het boek en de titel te positioneren */
+	width: 35%;
+  }
+    
+  /* link icon */
+header > a:last-of-type img {
+	width:auto;
+	height:2em;
+  }
+  
+/* HAMBURGER BUTTON STYLING */
+header button {
+	padding:.5em;
+	
+	/* icon en tekst met gap-je naast elkaar */
+	align-items:center;
+	gap:.25em;
+	
+	/* standaard styling aanpassen */
+	appearance:none;
+	background-color:var(--calltoactionCYAN);
+	border:none;
+	border-radius:.25em; 
+	font:inherit;
+	text-align:center;
+	color:var(--button-color);
+	transition: transform 2s;
+  }
+
+  header button:hover {
+	transform: scale(1.3);
+
+  }
+  
+  header button img {
+	width:1em;
+  }
+
+/* SLUIT BUTTON STYLING */
+header nav button {
+	padding:.5em;
+	
+	/* icon en tekst met gap-je naast elkaar */
+	position: relative;
+	align-items:flex-end;
+	
+	/* standaard styling aanpassen */
+	appearance:none;
+	background-color: black;
+	border:none;
+	border-radius:.25em; 
+	font:inherit;
+	text-align:center;
+	color:var(--button-color);
+	transition: transform 2s;
+  }
+
+  header nav button:hover {
+	transform: scale(0.1);
+  }
+  
+  header button img {
+	height:1em;
+  }
+
+
+/* SLUIT BUTTON POSITIONERING */
+header nav > button {
+	justify-self:end;
+   }
+   
+/* HET MENU */
+nav {
+	padding:1em;
+	display:grid;
+	align-content:start;
+	gap:1em;
+	background-color:var(--menuopenkleur);
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	transform:translatex(100%);
+	transition:transform 1s;
+	width: 100%;
+  }
+  
+  /* als menu open is */
+  nav.toonMenu {
+	transform:translatex(0);
+  }
+  
+/* LIJST MET LINKS */
+
+nav ul { 
+	margin:0; 
+	padding:0em;
+	list-style:none;
+	z-index: 100;
+  }
+
+nav ul li {
+    font-size: 14px;
+    font-family: var (var(--websitefont));
+	letter-spacing: 1.05px;
+	align-items: center;
+	z-index: 100;
+}
+  
+/* EEN LINK IN DE LIJST */
+
+nav a {
+	/* icon en tekst met gap-je naast elkaar */
+	display:flex;
+	align-items:center;
+	column-gap:.25em;
+	border-bottom:solid 0.5px white;
+  	padding: 15px;
+ 	margin: 1em 0 0 0;
+	z-index: 100;
+	transition: transform .2s; 
+  }
+
+  nav a:hover {
+	transform: scale(1.1);
+	background-color: var(--witmain);
+	border-top: var(--calltoactionCYAN);
+	border-left: var(--calltoactionCYAN);
+	border-bottom: var(--calltoactionPINK);
+	border-right: var(--calltoactionPINK);
+	border-style: solid;
+	border-width: 0.5em;
+	color: var(--zwartmain);
+  }
+  
+  nav a img {
+	width:auto;
+	height:3em;
+  }
+  
+  nav a.active {
+	font-weight:bold;
+	font-size: 110%;
+  }
+
+  nav ul li:hover {
+  	box-shadow: inset 46em 0 0 0 var(--calltoactioncolor);
+	transition: 1s ease-in-out;
+	color: black;
+  }
+
+/* DE MAIN PER SECTION */
+
+main  {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+/* gemakkelijk de font per element kunnen aanpassen */
+
+  p {
+	font-family: var(--websitefont);
+}
+
+  h1 {
+	font-family: var(--websitefont);
+  }
+
+  h2 {
+	font-family: var(--websitefont);
+  }
+
+  h3 {
+	font-family: var(--websitefont);
+  }
+
+  button {
+	font-family: var(--websitefont);
+  }
+
+  ul {
+	padding-left: none;
+	list-style: none;
+  }
+
+  img {
+	width: 100%;
+  }
+
+/* Section 1 */
+	
+  main.index section[aria-label="landing-page"] video {
+	width: 100%;
+	height: 600px;
+	/* bron: https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit?retiredLocale=nl */
+	object-fit: cover;
+	position: absolute;
+	left: 0;
+	/* Bron: https://css-tricks.com/almanac/properties/c/clip-path/ */
+	clip-path: polygon(0% 0%,100% 0%,100% 95%,0% 100%);
+  }
+
+  main.index section[aria-label="landing-page"] section {
+	position: relative;
+	height: 500px;
+  }
+
+  main.index section[aria-label="landing-page"] section img{
+	width: 80%;
+	margin-top: 1em;
+  }
+
+  main.index section[aria-label="landing-page"] span{
+	justify-items: center;
+  }
+
+  main.index section[aria-label="landing-page"] h1 {
+	color: var(--zwartmain);
+	transform: skewY(-5deg);
+	font-size:1em;
+	line-height:1em;
+	letter-spacing:.3em;
+	background-color: white;
+	border-radius: 3em;
+	padding: 5px;
+	margin-left: 6.5em;
+	margin-right: 6.5em;
+	transition: 1s;
+  }
+
+  main.index section[aria-label="landing-page"] h1:hover {
+	color: var(--calltoactionPINK);
+	transform: skewY(0deg);
+	font-size:1em;
+	line-height:1em;
+	letter-spacing:.3em;
+	background-color: white;
+	border-top: var(--calltoactionCYAN);
+	border-bottom: var(--calltoactionCYAN);
+	border-right: var(--calltoactionPINK);
+	border-left: var(--calltoactionPINK);
+	border-width: 0.3em;
+	border-style: dotted;
+	border-radius: 3em;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-left: 5.5em;
+	margin-right: 5.5em;
+  }
+
+  main.index section[aria-label="landing-page"] h2 {
+	color: var(--calltoactionPINK);
+	font-size: 3em;
+	line-height:1em;
+	letter-spacing:.1em;
+	text-shadow:.1em .1em 0 var(--witmain);
+	margin-bottom: 1em;
+	transition: 1s;
+  }
+
+  main.index section[aria-label="landing-page"] h2:hover {
+	color: var(--calltoactionCYAN);
+	text-shadow:.1em .1em 0 var(--zwartmain);
+  }
+
+  main.index section[aria-label="landing-page"] button {
+	color: var(--witmain);
+	background-color: var(--calltoactionPINK);
+	padding: 10px 30px 10px 30px;
+	transform: skewY(-5deg);
+	font-size: 1em;
+	line-height:1em;
+	letter-spacing:.1em;
+	text-shadow:.1em .1em 0 var(--zwartmain);
+	width: 100%;
+	transition: 2s;
+  }
+
+  main.index section[aria-label="landing-page"] button:hover {
+	color: var(--zwartmain);
+	background-color: var(--calltoactionCYAN);
+	padding: 10px 30px 10px 30px;
+	transform: skewY(-5deg);
+	font-size: 1em;
+	line-height:1em;
+	letter-spacing:.1em;
+	text-shadow:.1em .1em 0 var(--zwartmain);
+	width: 100%
+  }
+  
+
+  /* Section 2 */
+
+  main.index section[aria-label="animation"] {
+	height: 250px;
+	background-color: var(--witmain);
+  }
+
+  main.index section[aria-label="animation"] h2{
+	margin-top: 3em;
+	font-size: 3em;
+	text-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+  }
+
+  @keyframes fallguys-animation {
+	0%{
+	  transform:none;
+	}
+	10%{
+	  transform:scale(1.2, .8);
+	}
+	20%{
+	  transform:scale(.6, 1.5) translateY(-.25em); 
+	  color:var(--calltoactionCYAN);
+	}
+	30%{
+	  transform:scale(1.3, .7);
+	}
+	40%{
+	  transform:scale(.9, 1.1);
+	}
+	50%{
+	  transform:none;
+	}
+	100%{
+	  transform:none;
+	}
+  }
+
+  main.index div[aria-label="fallguysanimation"] {
+	color:var(--calltoactionPINK);
+	transition: 2s;
+	
+  }
+
+  main.index div[aria-label="fallguysanimation"]:hover {
+	background-color: var(--zwartmain);
+	color:var(--calltoactionCYAN);
+	margin-left: 5em;
+	border-top-left-radius: 2em;
+	border-bottom-left-radius: 2em;
+	padding-left: 1em;
+  }
+  
+  main.index div[aria-label="fallguysanimation"] span {
+	display:inline-block;
+	transform-origin:center bottom;
+	animation-name:fallguys-animation;
+	animation-duration:3s;
+	animation-iteration-count:infinite;
+	animation-play-state:running;
+  }
+  
+  main.index div[aria-label="fallguysanimation"] span:nth-of-type(1) {
+	animation-delay:0s;
+  }
+  
+  main.index div[aria-label="fallguysanimation"] span:nth-of-type(2) {
+	animation-delay:.15s;
+  }
+  
+  main.index div[aria-label="fallguysanimation"] span:nth-of-type(3) {
+	animation-delay:.3s;
+  }
+
+  main.index div[aria-label="fallguysanimation"] span:nth-of-type(4) {
+	animation-delay:.45s;
+  }
+  
+  main.index div[aria-label="fallguysanimation"] span:nth-of-type(5) {
+	animation-delay:.1s;
+  }
+  
+  main.index div[aria-label="fallguysanimation"] span:nth-of-type(6) {
+	animation-delay:1.15s;
+  }
+
+  main.index div[aria-label="fallguysanimation"] span:nth-of-type(7) {
+	animation-delay:1.3s;
+  }
+  
+  main.index div[aria-label="fallguysanimation"] span:nth-of-type(8) {
+	animation-delay:1.3s;
+  }
+  
+  
+    /* Section 3 */
+
+main.index section[aria-label="slide-show"] {
+	background-image: var(--sectionslides);
+	border-style: solid;
+	border-width: 5px;
+	border-color: var(--witmain);
+	border-radius: 2em;
+	margin-left: 1em;
+	margin-right: 1em;
+	border-top: #fff 5px;
+
+}
+
+main.index section[aria-label="slide-show"] h2 span:nth-of-type(1) {
+	color: rgb(254, 213, 48);
+	text-transform: uppercase;
+	text-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+}
+
+main.index section[aria-label="slide-show"] h2 span:nth-of-type(2) {
+	color: var(--witmain);
+	font-size: 32px;
+	text-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;	
 }
 
 
+main.index section[aria-label="slide-show"] ul {
+	display: flex;
+    padding-left: 2.5em;
+    margin-bottom: 3em;
+    gap: 100px;
+    overflow-x: scroll;
+	overflow-y: hidden;
+	margin-left: 1em;
+  }
+
+main.index  section[aria-label="slide-show"] li {
+    min-width: 14em;
+  }
+
+main.index section[aria-label="slide-show"] li:nth-of-type(3) {
+    margin-right: 3em;
+  }
+
+
+main.index section[aria-label="slide-show"] p {
+	color: var(--witmain);
+	padding: 0em 1em 0em 1em;
+  }
+
+main.index section[aria-label="slide-show"] img {
+	margin-bottom: 1em;
+  }
+
+main.index section[aria-label="slide-show"] h3 {
+	color: var(--witmain);
+	text-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;	
+  }
+
+main.index section[aria-label="slide-show"] button {
+	padding: 10px 0 10px 0;
+	width: 100%;
+  }
+
+main.index section[aria-label="slide-show"] li:nth-of-type(1) img{
+	transform: skewY(-5deg);
+	border-style: solid;
+	border-width: 5px;
+	border-color: var(--witmain);
+	border-radius: 2em;
+	transition: transform 1s;
+  }
+
+main.index section[aria-label="slide-show"] li:nth-of-type(2) img {
+	transform: skewY(5deg);
+	border-style: solid;
+	border-width: 5px;
+	border-color: var(--witmain);
+	border-radius: 2em;
+	transition: transform 1s;
+  }
+
+main.index section[aria-label="slide-show"] li:nth-of-type(3) img {
+	transform: skewY(-3deg);
+	border-style: solid;
+	border-width: 5px;
+	border-color: var(--witmain);
+	border-radius: 2em;
+	transition: transform 1s;
+  }
+
+main.index section[aria-label="slide-show"] li img:hover {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	border-style: solid;
+	border-width: 5px;
+	border-color: var(--zwartmain);
+	border-radius: 2em;
+	transform: scale(1.3);
+  }
+
+
+      /* Section 4 */
+main.index section[aria-label="bouncing-img"] {
+	margin-top: 1em;
+ }
+
+main.index section[aria-label="bouncing-img"] h2 {
+	color: var(--witmain);
+	text-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+	font-size: 2em;
+ }
+
+main.index section[aria-label="bouncing-img"] h3 {
+	color: var(--witmain);
+	text-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+	font-size: 1em;
+ }
+
+main.index section[aria-label="bouncing-img"] img[aria-label="achtergrond"] {
+	width: 100%;
+	object-fit: cover;
+    height: 500px;
+	position: absolute;
+	left: 0;
+
+ }
+main.index section[aria-label="bouncing-img"] img {
+	position: relative;
+	width: 30%;
+ }
+
+ @keyframes jumping-animation1 {
+	0% {
+	  transform:translateY(0);
+	}
+	100% {
+	  transform:translateY(-1rem);
+	}
+  }
+
+  @keyframes jumping-animation2 {
+	0% {
+	  transform:translateY(0);
+	}
+	100% {
+	  transform:translateY(-10rem);
+	}
+  }
+
+  @keyframes jumping-animation3 {
+	0% {
+	  transform:translateX(0);
+	}
+	100% {
+	  transform:translateX(-2.5rem);
+	}
+  }
+  
+main.index section[aria-label="bouncing-img"] section img:nth-of-type(1) {
+	top: 170px;
+	left: 20px;
+	animation-name:jumping-animation1;
+	animation-duration:1.5s;
+	animation-iteration-count:infinite;
+	animation-direction:alternate;
+	animation-timing-function:cubic-bezier(0.125, 0.995, 1.000, 1);
+	animation-play-state: running;
+ }
+
+main.index section[aria-label="bouncing-img"] section img:nth-of-type(2) {
+	top: 190px;
+	animation-name:jumping-animation2;
+	animation-duration:0.8s;
+	animation-iteration-count:infinite;
+	animation-direction:alternate;
+	animation-timing-function:cubic-bezier(0.125, 0.995, 1.000, 1);
+	animation-play-state: running;
+ }
+
+main.index section[aria-label="bouncing-img"] section img:nth-of-type(3) {
+	top: 140px;
+	animation-name:jumping-animation3;
+	animation-duration:1s;
+	animation-iteration-count:infinite;
+	animation-direction:alternate;
+	animation-timing-function:cubic-bezier(0.125, 0.995, 1.000, 1);
+	animation-play-state: running;
+ }
+
+
+main.index section[aria-label="bouncing-img"] h2 {
+	position: relative;
+	transition: 2s;
+ }
+
+main.index section[aria-label="bouncing-img"] h2:hover {
+	color: red;
+	text-shadow: rgb(0 0 0 / 1000%) 0px 40px 40px;
+	background-color: rgb(77, 148, 255);
+	margin-left: 3em;
+	margin-bottom: .2em;
+	transform: scale(1.1);
+	border-top-left-radius: 1em;
+	border-bottom-left-radius: 1em;
+ }
+
+main.index section[aria-label="bouncing-img"] h3 {
+	position: relative;
+	transition: 2s;
+ }
+
+main.index section[aria-label="bouncing-img"] h3:hover {
+	color:  rgb(0, 153, 255);
+	text-shadow: rgb(0 0 0 / 100%) 0px 10px 10px;
+	padding: 0.5em;
+	background-color: red;
+	margin-right: 9em;
+	margin-bottom: .2em;
+	border-top-right-radius: 1em;
+	border-bottom-right-radius: 1em;
+ }
+
+/* Footer */
+
+ footer[aria-label="footer1"] {
+	height: 670px;
+	background-color: var(--zwartmain);
+ }
+
+ footer[aria-label="footer1"] h2 {
+	margin-top: 8em;
+	padding-top: 3em;
+	color: white;
+	display: flex;
+	justify-content: center;
+ }
+
+ footer ul[aria-label="socials"] {
+	display: flex;
+	margin-right: 40px;
+	justify-content: center;
+	gap: 10px;
+	transition: transform 5s;
+ }
+
+ footer ul[aria-label="socials"] img:hover {
+	transform: scale(1.2);
+ }
+
+ footer section ul {
+	color: var(--witmain);
+	text-align: center;
+	margin-top: 3em;
+	line-height: 2em;
+	margin-right: 2em;
+    flex-direction: column;
+    justify-items: center;
+	font-family: var(--websitefont);
+ }
+
+ footer section a {
+	text-decoration: none;
+	color: var(--witmain);
+ }
+
+ footer section li {
+	transition: 1s;
+ }
+
+ footer section li:hover {
+	color: var(--calltoactionPINK);
+	background-color: var(--witmain);
+	padding: 6px;
+	border-top: yellow;
+	border-left: orange;
+	border-right: red;
+	border-bottom: var(--calltoactionCYAN);
+	border-width: .5em;
+	border-style: solid;
+ }
 
 
 
-/****************/
-/* JOUW STYLING */
-/****************/
 
-/* jouw code */
+  /****************************************************************/
+/* styling voor de header als de browser minimaal 38em breed is */
+/****************************************************************/
+@media (min-width:38em) {
+	header > button {
+	  display:none;
+	}
+	
+	nav {
+	  position:static;
+	  transform:none;
+	  padding:0;
+	  background:none;
+	}
+	
+	nav button {
+	  display:none;
+	}
+	
+	nav ul {
+	  display:flex;
+	  gap:1em;
+	  margin: 50px;
+	}
+	
+	nav a {
+	  flex-direction:column;
+	  
+	  border:none;
+	}
+
+	nav ul li:hover {
+		color: #012;
+		box-shadow: inset 46em 0 0 0 var(--calltoactioncolor);
+		transition: 1s ease-in-out;
+		border-radius: 2em;
+	  }
+
+	  nav ul li {
+		text-align: center;
+	  }
+	
+	header > a:last-of-type {
+	  flex-direction:column;
+	}
+  }
+
+  /****************************************************************/
+  /* styling voor de header als de browser minimaal 57em breed is */
+  /****************************************************************/
+  @media (min-width:57em) {
+	header > a:last-of-type,
+	nav a {
+	  flex-direction:row;
+	  height: auto;
+	  width: auto;
+	}
+  }
+  
+
 
